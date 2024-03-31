@@ -28,7 +28,7 @@ jobs:
         DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
         DOCKER_TOKEN: ${{ secrets.DOCKER_TOKEN }}
       run: 
-        echo "Teste: $DOCKER_USERNAME"
+        echo "Teste $DOCKER_USERNAME"
         ./ci-login.sh
         
 
