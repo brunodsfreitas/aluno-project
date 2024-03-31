@@ -1,0 +1,23 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: aluno-front
+  namespace: aluno-front
+  labels:
+    app: aluno-front
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: aluno-front
+  template:
+    metadata:
+      labels:
+        app: aluno-front
+    spec:
+      containers:
+        - name: aluno-front
+          image: brunodsfreitas/aluno-project-front:v0.1.0
+          ports:
+            - containerPort: 8085

@@ -1,0 +1,23 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: aluno-api
+  namespace: aluno-api
+  labels:
+    app: aluno-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: aluno-api
+  template:
+    metadata:
+      labels:
+        app: aluno-api
+    spec:
+      containers:
+        - name: aluno-api
+          image: brunodsfreitas/aluno-project-api:v0.1.0
+          ports:
+            - containerPort: 3000
