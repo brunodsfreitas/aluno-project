@@ -2,12 +2,12 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: alunoa
+  name: aluno-api
   namespace: argocd
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
-  projetc: default
+  project: default
   source:
     repoURL: https://github.com/brunodsfreitas/aluno-project.git
     targetRevision: master
