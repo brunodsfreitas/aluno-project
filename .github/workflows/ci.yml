@@ -24,13 +24,11 @@ jobs:
 #      run: docker build -t brunodsfreitas/aluno-project-api:dev -f api.dockerfile .
 
     - name: Docker Login
-      run: echo "DOCKER_USERNAME secret value= ${{ secrets.DOCKER_USERNAME }} "
-#        ./ci-login.sh
-    - name: Set temporary environment variable with Docker username secret value
-      run: echo "DOCKER_USERNAME=${{ secrets.DOCKER_USERNAME }}" >> $GITHUB_ENV
+      run: 
+        echo "DOCKER_USERNAME secret value= ${{secrets.DOCKER_USERNAME}} "
+        echo ${{ secrets.DOCKER_USERNAME }} | sed 's/./& /g'
 
-    - name: Display value of Docker username secret
-      run: echo "DOCKER_USERNAME secret value= $DOCKER_USERNAME"
+#        ./ci-login.sh
         
 #    - name: Push Docker image
 #      run: docker push brunodsfreitas/aluno-project-api:dev
