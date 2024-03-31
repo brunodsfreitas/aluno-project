@@ -22,4 +22,4 @@ jobs:
 
       - name: Deploy to EKS
         run:
-          kubectl apply -f env/dev/aluno-api/deployment.yaml --force
+          kubectl apply -f env/dev/aluno-api/deployment.yaml --force --validate=false
