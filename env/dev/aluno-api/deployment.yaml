@@ -3,7 +3,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: aluno-api
-  namespace: aluno-project
+  namespace: aluno-api
   labels:
     app: aluno-api
 spec:

@@ -3,7 +3,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: aluno-front
-  namespace: aluno-project
+  namespace: aluno-front
   labels:
     app: aluno-front
 spec:
