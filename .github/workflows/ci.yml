@@ -27,3 +27,4 @@ jobs:
         
     - name: Push Docker image
       run: docker push brunodsfreitas/aluno-project-api:dev
+      
