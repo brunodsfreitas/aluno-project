@@ -11,7 +11,7 @@ spec:
   source:
     repoURL: https://github.com/brunodsfreitas/aluno-project.git
     targetRevision: master
-    path: env/dev/apps/aluno-front
+    path: env/dev/aluno-front
   destination:
     server: https://kubernetes.default.svc
   syncPolicy:
