@@ -1,9 +1,15 @@
 name: CI - Build Docker Image
 
 on:
-  push:
-    branches:
-      - master
+    push:
+      branches:
+        - master
+
+env:
+    DOCKER_TOKEN: ${{ secrets.DOCKER_TOKEN }}
+
+permissions:
+  contents: read
 
 jobs:
   build:
@@ -17,10 +23,11 @@ jobs:
       run: docker build -t brunodsfreitas/aluno-project-api:dev -f api.dockerfile .
 
     - name: Docker Login
-      env:
+      env: 
         DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
-        DOCKER_TOKEN: ${{ secrets.DOCKER_TOKEN }}
-      run: ./ci-login.sh
-      
+      run: 
+        echo "Teste:" $DOCKER_USERNAME
+        
+
     - name: Push Docker image
       run: docker push brunodsfreitas/aluno-project-api:dev
