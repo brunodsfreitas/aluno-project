@@ -20,12 +20,12 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v3
 
-    - name: Build Docker image
-      run: docker build -t brunodsfreitas/aluno-project-api:dev -f api.dockerfile .
+#    - name: Build Docker image
+#      run: docker build -t brunodsfreitas/aluno-project-api:dev -f api.dockerfile .
 
     - name: Docker Login
-      run: 
-        ./ci-login.sh
+      run: echo "DOCKER_USERNAME secret value= ${{ secrets.DOCKER_USERNAME }} "
+#        ./ci-login.sh
         
-    - name: Push Docker image
-      run: docker push brunodsfreitas/aluno-project-api:dev
+#    - name: Push Docker image
+#      run: docker push brunodsfreitas/aluno-project-api:dev
