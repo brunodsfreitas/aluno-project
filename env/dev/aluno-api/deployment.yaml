@@ -21,3 +21,15 @@ spec:
           image: brunodsfreitas/aluno-project-api:v0.1.1
           ports:
             - containerPort: 3000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: aluno-api-service
+spec:
+  selector:
+    app: aluno-api
+  ports:
+  - protocol: TCP
+    port: 3000
+  type: LoadBalancer
