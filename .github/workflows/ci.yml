@@ -17,7 +17,9 @@ jobs:
       run: docker build -t brunodsfreitas/aluno-project-api:dev -f api.dockerfile .
 
     - name: Docker Login
-      run: echo "${{ secrets.DOCKER_TOKEN }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin > /dev/null
-  
+      run: ./ci-login.sh
+      env:
+        DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+        DOCKER_TOKEN: ${{ secrets.DOCKER_TOKEN }}
     - name: Push Docker image
       run: docker push brunodsfreitas/aluno-project-api:dev
