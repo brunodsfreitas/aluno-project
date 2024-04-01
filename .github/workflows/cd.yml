@@ -20,10 +20,10 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-east-2
 
-      - name: Configure EKS kube
-        run: |
-          aws eks --region us-east-2 update-kubeconfig --name eks-cluster
-          kubectl version
+#      - name: Configure EKS kube
+#        run: |
+#          aws eks --region us-east-2 update-kubeconfig --name eks-cluster
+#          kubectl version
 
       - name: verify deployment
         uses: kodermax/kubectl-aws-eks@main
